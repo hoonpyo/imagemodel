@@ -19,7 +19,8 @@ st.header('마스크 판별기')
 # 들어온 이미지를 224 x 224 x 3차원으로 변환하기 위해서 빈 벡터를 만들어 놓음
 data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
-img_file_buffer = st.camera_input("정중앙에 사물을 위치하고 사진찍기 버튼을 누르세요")
+uploaded_file = st.file_uploader("파일을 업로드하세요", type=["jpg", "jpeg", "png"])
+#img_file_buffer = st.camera_input("정중앙에 사물을 위치하고 사진찍기 버튼을 누르세요")
 
 if img_file_buffer is not None:
     # # To read image file buffer as a PIL Image:
