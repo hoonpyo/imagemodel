@@ -22,16 +22,16 @@ data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 uploaded_file = st.file_uploader("파일을 업로드하세요", type=["jpg", "jpeg", "png"])
 #img_file_buffer = st.camera_input("정중앙에 사물을 위치하고 사진찍기 버튼을 누르세요")
 
-if img_file_buffer is not None:
+if uploaded_file is not None:
     # # To read image file buffer as a PIL Image:
-    # image = Image.open(img_file_buffer) # 입력받은 사진을 행렬로 변환
+    # image = Image.open(uploaded_file) # 입력받은 사진을 행렬로 변환
 
     # # To convert PIL Image to numpy array:
     # img_array = np.array(image) # ndarray로 변환
 
     # Replace this with the path to your image
     # 원본 이미지 불러오기
-    image = Image.open(img_file_buffer).convert('RGB')
+    image = Image.open(uploaded_file).convert('RGB')
 
     #resize the image to a 224x224 with the same strategy as in TM2:
     #resizing the image to be at least 224x224 and then cropping from the center
